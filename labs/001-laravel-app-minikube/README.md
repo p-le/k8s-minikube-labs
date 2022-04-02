@@ -1,21 +1,12 @@
-# Deploy Laravel App vào Minikube Cluster
+# Labs 001
 
-## Setup
+**Vấn đề**: Deploy Laravel App vào Minikube Cluster
 
-1. [Install Minikube and kubectl](https://kubernetes.io/docs/tasks/tools/install-minikube/). Find out more details about Minikube setup [here](https://kubernetes.io/docs/setup/minikube/).
-2. Start minikube
+## 1. Chuẩn bị
 
-   ```
-   minikube start
-   ```
+Hoàn tất `docs/getting_started.md` để khởi tạo Minikube Cluster
 
-   [K8s Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) available with Minikube
-
-   ```
-   minikube dashboard
-   ```
-
-## Deploy Laravel to minikube
+## 2. Thực hành
 
 > To deploy local docker images (without pushed to registry or repo), you have to send the images to minikube.
 > Find out more details [here](https://stackoverflow.com/questions/49898535/kubernetes-fails-to-run-a-docker-image-build-locally) and [here](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615).

@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  db:
+    image: docker.io/bitnami/mysql:8.0
+    container_name: db
+    networks:
+      - k8s-labs
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes # Chỉ sử dụng ALLOW_EMPTY_PASSWORD trên môi trường Dev
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=hogehoge
+      - MYSQL_DATABASE=sample_app
+      - BITNAMI_DEBUG=true
+  app:
+    image: docker.io/bitnami/laravel:9
+    container_name: app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USERNAME=admin
+      - DB_PASSWORD=hogehoge
+      - DB_DATABASE=sample_app
+    networks:
+      - k8s-labs
+    volumes:
+      - ./src:/app
+    depends_on:
+      - db
+
+networks:
+  k8s-labs:

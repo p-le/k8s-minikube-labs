@@ -4,6 +4,8 @@ Lựa chọn Binary phù hợp với môi trường của các bạn.
 
 **Note**: Nếu đang sử dụng Windows thì có thể xem xét provision một Ubuntu VM bằng [Vagrant](https://www.vagrantup.com) & [VirtualBox](https://www.virtualbox.org).
 
+> Tham khảo: tools/Vagrantfile mà mình đã chuẩn bị
+
 Và sử dụng Minikube trong môi trường Linux sẽ thuận tiện hơn nhiều.
 
 https://minikube.sigs.k8s.io/docs/start/
@@ -11,7 +13,7 @@ https://minikube.sigs.k8s.io/docs/start/
 Nếu các bạn sử dụng Linux có thể chạy script mình đã chuẩn bị
 
 ```
-./scripts/install-minikube.sh
+$ ./tools/install-minikube.sh
 ```
 
 # 2. Khởi tạo Minikube Cluster
@@ -70,35 +72,45 @@ minikube dashboard
 # 4. Cài đặt [kubectl](https://kubernetes.io/docs/tasks/tools/) và kiểm tra Minikube Cluster
 
 ```
-$ /script/install-kubectl.sh
+$ ./tools/install-minikube.sh
 ```
 
 Kiểm tra `kubectl` đã cài đặt thành công
 
 ```
+
 $ kubectl version --short
 
 Client Version: v1.23.5
 Server Version: v1.23.3
+
 ```
 
 Thử kiểm tra các Pods trong namespace: `kube-system`
 
 ```
+
 $ kubectl get pods -n kube-system
+
 ```
 
 Output:
 
 ```
-NAME                               READY   STATUS    RESTARTS       AGE
-coredns-64897985d-gfqfl            1/1     Running   0              2m31s
-etcd-minikube                      1/1     Running   0              2m46s
-kube-apiserver-minikube            1/1     Running   0              2m41s
-kube-controller-manager-minikube   1/1     Running   0              2m41s
-kube-proxy-9kdrg                   1/1     Running   0              2m31s
-kube-scheduler-minikube            1/1     Running   0              2m41s
-storage-provisioner                1/1     Running   1 (116s ago)   2m35s
+
+NAME READY STATUS RESTARTS AGE
+coredns-64897985d-gfqfl 1/1 Running 0 2m31s
+etcd-minikube 1/1 Running 0 2m46s
+kube-apiserver-minikube 1/1 Running 0 2m41s
+kube-controller-manager-minikube 1/1 Running 0 2m41s
+kube-proxy-9kdrg 1/1 Running 0 2m31s
+kube-scheduler-minikube 1/1 Running 0 2m41s
+storage-provisioner 1/1 Running 1 (116s ago) 2m35s
+
 ```
 
 Đến đây cói như là hoàn tất setup Minikube trên môi trường Dev.
+
+```
+
+```

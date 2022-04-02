@@ -1,0 +1,3 @@
+# Ignore labs files
+labs/001-laravel-app-minikube/src
+labs/001-laravel-app-minikube/data
