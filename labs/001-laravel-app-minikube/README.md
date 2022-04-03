@@ -23,12 +23,15 @@ cd labs/001-laravel-app-minikube
 minikube service --url laravel
 ```
 
+Access vào URL được trả về từ command trên
+
 - Nếu là Windows & Vagrant
 
 ```
 kubectl proxy --address='0.0.0.0' --disable-filter=true
-http://<VAGRANT-VM-IP>:8001/api/v1/namespaces/default/services/laravel:/proxy/
 ```
+
+Access vào: http://<VAGRANT-VM-IP>:8001/api/v1/namespaces/default/services/laravel:/proxy/
 
 ## 4. Clean up
 

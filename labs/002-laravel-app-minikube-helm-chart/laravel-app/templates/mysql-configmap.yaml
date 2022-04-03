@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+data:
+  my_custom.cnf: |
+    [mysqld]
+    max_allowed_packet=32M
