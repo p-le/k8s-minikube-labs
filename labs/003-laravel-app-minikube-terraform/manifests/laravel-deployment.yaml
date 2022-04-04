@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-app
+  labels:
+    app: laravel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel
+  template:
+    metadata:
+      labels:
+        app: laravel
+    spec:
+      containers:
+      - name: laravel
+        image: docker.io/bitnami/laravel:9
+        env:
+          - name: DB_HOST
+            value: mysql-0.mysql
+          - name: DB_PORT
+            value: "3306"
+          - name: DB_USERNAME
+            value: admin
+          - name: DB_PASSWORD
+            value: hogehoge
+          - name: DB_DATABASE
+            value: sample_app
+        ports:
+        - containerPort: 8000
+        resources:
+          limits: 
+            memory: 512Mi
+            cpu: 250m
+          readinessProbe:
+        readinessProbe:
+          tcpSocket:
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 15

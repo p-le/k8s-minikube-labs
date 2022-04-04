@@ -1,4 +1,4 @@
-# Labs 001
+# Labs 002
 
 **Vấn đề**: Đóng gói Helm Chart và sau đó deploy vào Minikube Cluster
 

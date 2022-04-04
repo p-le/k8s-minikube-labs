@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  serviceName: mysql
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec: 
+          
+      containers:
+      # MySQL Container
+      - name: mysql
+        image: docker.io/bitnami/mysql:8.0
+        command:
+          - bash
+          - "-c"
+          - |
+            set -ex
+            [[ `hostname` =~ -([0-9]+)$ ]] || exit 1
+            ordinal=${BASH_REMATCH[1]}
+            if [[ $ordinal -eq 0 ]]; then
+              export MYSQL_REPLICATION_MODE=master
+              /opt/bitnami/scripts/mysql/entrypoint.sh /opt/bitnami/scripts/mysql/run.sh
+            else
+              export MYSQL_REPLICATION_MODE=slave
+              export MYSQL_MASTER_HOST=mysql-0.mysql
+              /opt/bitnami/scripts/mysql/entrypoint.sh /opt/bitnami/scripts/mysql/run.sh
+            fi
+        env:
+        - name: ALLOW_EMPTY_PASSWORD
+          value: "yes"
+        - name: MYSQL_REPLICATION_USER
+          value: dummy
+        - name: MYSQL_REPLICATION_PASSWORD
+          value: dummy
+        - name: MYSQL_USER
+          value: admin
+        - name: MYSQL_PASSWORD
+          value: hogehoge
+        - name: MYSQL_DATABASE
+          value: sample_app
+        - name: BITNAMI_DEBUG
+          value: "true"
+        ports:
+        - name: mysql
+          containerPort: 3306
+        volumeMounts:
+        - name: data
+          mountPath: /opt/bitnami/mysql/data
+        - name: mysql-config
+          mountPath: /opt/bitnami/mysql/conf/bitnami/my_custom.cnf
+          subPath: my_custom.cnf
+        resources:
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        readinessProbe:
+          exec:
+            # Check we can execute queries over TCP (skip-networking is off).
+            command:
+              - bash 
+              - "-c" 
+              - | 
+                mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h 127.0.0.1 -e 'SELECT 1'
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          timeoutSeconds: 1
+      volumes:
+      - name: mysql-config
+        configMap:
+          name: mysql
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 5Gi

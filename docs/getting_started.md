@@ -1,30 +1,26 @@
 # 1. Cài đặt [Minikube](https://minikube.sigs.k8s.io/docs/)
 
-Lựa chọn Binary phù hợp với môi trường của các bạn.
+**[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với môi trường của các bạn.
 
-**Note**: Nếu đang sử dụng Windows thì có thể xem xét provision một Ubuntu VM bằng [Vagrant](https://www.vagrantup.com) & [VirtualBox](https://www.virtualbox.org).
+**Note**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Ubuntu VM bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều.
 
-> Tham khảo: tools/Vagrantfile mà mình đã chuẩn bị
+Tham khảo: **[Vagrantfile](tools/Vagrantfile)** mà mình đã chuẩn bị
 
-Và sử dụng Minikube trong môi trường Linux sẽ thuận tiện hơn nhiều.
+Nếu các bạn sử dụng Linux có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
 
-https://minikube.sigs.k8s.io/docs/start/
-
-Nếu các bạn sử dụng Linux có thể chạy script mình đã chuẩn bị
-
-```
+```shell
 $ ./tools/install-minikube.sh
 ```
 
 # 2. Khởi tạo Minikube Cluster
 
-[Môi trường chạy Minikube](https://minikube.sigs.k8s.io/docs/start/#what-youll-need) cần phải có ít nhất.
+**[Môi trường chạy Minikube](https://minikube.sigs.k8s.io/docs/start/#what-youll-need)** cần phải có ít nhất.
 
-- 2CPU
-- 2GB Free Memory
-- 20GB Free Disk Space
+- 2 CPU
+- 2 GB Free Memory
+- 20 GB Free Disk Space
 
-Khởi tạo Minikube Cluster
+Khởi tạo Minikube Cluster bằng command sau:
 
 ```
 $ minikube start
@@ -53,9 +49,13 @@ Output minh họa:
 
 # 3. Truy cập thử Dashboard của Minikube
 
+Sử dụng command sau để lấy URL tới Dashboard.
+
 ```
-minikube dashboard
+$ minikube dashboard
 ```
+
+Command trên sẽ tạo một Proxy tới **kubernetes-dashboard** service
 
 ```
 🔌  Enabling dashboard ...
@@ -71,11 +71,13 @@ minikube dashboard
 
 # 4. Cài đặt [kubectl](https://kubernetes.io/docs/tasks/tools/) và kiểm tra Minikube Cluster
 
+Sử dụng script: **[install-kubectl.sh](../tools/install-kubectl.sh)**
+
 ```
-$ ./tools/install-minikube.sh
+$ ./tools/install-kubectl.sh
 ```
 
-Kiểm tra `kubectl` đã cài đặt thành công
+Kiểm tra **[kubectl](https://kubernetes.io/docs/tasks/tools/)** đã cài đặt thành công
 
 ```
 
@@ -83,18 +85,17 @@ $ kubectl version --short
 
 Client Version: v1.23.5
 Server Version: v1.23.3
-
 ```
 
-Thử kiểm tra các Pods trong namespace: `kube-system`
+Thử kiểm tra các **[Pods](https://kubernetes.io/docs/concepts/workloads/pods/)** trong **[Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)**: `kube-system`
+
+NOTE: `kube-system` là namespace chứa các objects tạo Kubernetes System
 
 ```
-
 $ kubectl get pods -n kube-system
-
 ```
 
-Output:
+Sample Output:
 
 ```
 
@@ -109,8 +110,4 @@ storage-provisioner 1/1 Running 1 (116s ago) 2m35s
 
 ```
 
-Đến đây cói như là hoàn tất setup Minikube trên môi trường Dev.
-
-```
-
-```
+Đến đây coi như là các bạn đã hoàn tất setup cơ bản để sử dụng Minikube trên môi trường Development. :tada:
