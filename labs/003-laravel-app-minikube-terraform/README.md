@@ -1,4 +1,4 @@
-# Labs 003
+# Lab 003
 
 **Nội dung**: Làm quen sử dụng **[Terraform](https://www.terraform.io/)** để deploy Kubernetes Resource vào Minikube Cluster
 

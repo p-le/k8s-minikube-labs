@@ -1,4 +1,4 @@
-# Labs 001
+# Lab 001
 
 **Nội Dung**: Sử dụng Laravel Docker Image và Deploy vào Minikube Cluster
 

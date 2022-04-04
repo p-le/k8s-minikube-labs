@@ -1,4 +1,4 @@
-# Labs 002
+# Lab 002
 
 **Nội Dung**: Đóng gói Helm Chart và sau đó deploy vào Minikube Cluster
 
