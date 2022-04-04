@@ -4,7 +4,7 @@
 
 Ở labs 001 này, chúng ta sẽ sử dụng Kubernetes Manifest Files đơn thuần để quản lý Resources trong Kubernetes Cluster.
 
-**[Manifest Files](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/)** thường được viết dưới format YAML. Trong Labs này mình đã chuẩn Manifest Files để deploy [Laravel](https://laravel.com/) + [MySQL](https://www.mysql.com/) vào Minikube Cluster.
+**[Manifest Files](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/)** thường được viết dưới format YAML. Trong Labs này mình đã chuẩn Manifest Files để deploy **[Laravel](https://laravel.com/)** + **[MySQL](https://www.mysql.com/)** vào Minikube Cluster.
 
 Về Docker Image, để đơn giản hóa, mình sử dụng 2 Docker Image có sẵn là
 
@@ -102,10 +102,10 @@ mysql        ClusterIP   None          <none>        3306/TCP         77s
 
 Kiểm tra URL để access tới Laravel Application
 
-| OS          | Thao tác                                                                                                                                                                                                                                           |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Linux/MacOS | Chạy command: `minikube service --url laravel` và access tới URL của Service `laravel`                                                                                                                                                             |
-| Windows     | Nếu bạn sử dụng Vagrant thì cần phải chạy Kubectl Proxy Command: `kubectl proxy --address='0.0.0.0' --disable-filter=true`. <br /> Sau đó thì access tới URL sau: `http://<VAGRANT-VM-IP>:8001/api/v1/namespaces/default/services/laravel:/proxy/` |
+| OS          | Thao tác                                                                                                                                                                                                                                                                                                                            |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Linux/MacOS | Chạy command: `minikube service --url laravel` và access tới URL của Service `laravel`                                                                                                                                                                                                                                              |
+| Windows     | Nếu bạn sử dụng Vagrant thì cần phải chạy **[kubectl proxy](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)** Command: `kubectl proxy --address='0.0.0.0' --disable-filter=true`. <br /> Sau đó thì access tới URL sau: `http://<VAGRANT-VM-IP>:8001/api/v1/namespaces/default/services/laravel:/proxy/` |
 
 ## 4. Clean up
 
