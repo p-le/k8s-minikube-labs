@@ -114,3 +114,7 @@ Sử dụng **[kubectl](https://kubernetes.io/docs/tasks/tools/)** để xóa c�
 ```
 $ ./destroy.sh
 ```
+
+# Tổng kết
+
+Trong Labs này các bạn sẽ cần phải đọc hiểu các Manifest Files mà mình chuẩn bị để làm quen với Kubernetes. Sau đó là sử dụng `kubectl` để quản lý resources trong Kubernetes Cluster.
