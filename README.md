@@ -7,6 +7,6 @@
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | **[Getting Started](docs/getting_started.md)**           | Setup cơ bản **[Minikube](https://minikube.sigs.k8s.io/docs/)** và **[kubectl](https://kubernetes.io/docs/tasks/tools/)** |
 | **[Lab 001](labs/001-laravel-app-minikube)**             |                                                                                                                           |
-| **[Lab 002](labs/002-laravel-app-minikube-helm-chart/)** |                                                                                                                           |
-| **[Lab 003](labs/003-laravel-app-minikube-terraform/)**  |                                                                                                                           |
-| **[Lab 004](labs/004-laravel-app-minikube-flux/)**       |                                                                                                                           |
+| **[Lab 002](labs/002-laravel-app-minikube-helm-chart/)** | Sử dụng **[Helm](https://helm.sh/)** để đóng gói Manifest Files của Application                                           |
+| **[Lab 003](labs/003-laravel-app-minikube-terraform/)**  | Sử dụng **[Terraform](https://www.terraform.io/)** quản lý Kubernetes Resources                                           |
+| **[Lab 004](labs/004-laravel-app-minikube-flux/)**       | WORK IN PROGRESS                                                                                                          |
