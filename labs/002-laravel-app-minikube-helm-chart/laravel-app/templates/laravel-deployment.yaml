@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: laravel-app
+  name: {{ .Release.Name }}-laravel-app
   labels:
     app: laravel
 spec:

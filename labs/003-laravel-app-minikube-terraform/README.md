@@ -85,7 +85,41 @@ Tiếp theo, tao file: **[k8s.tf](./k8s.tf)** để tạo các Terraform Resourc
 
 **Step 4:** Kiểm tra Terraform Plan
 
+Chạy Command `terraform plan` để print ra Execution Plan của Terraform
+
+```
+$ terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+Terraform will perform the following actions:
+# kubectl_manifest.manifest_file["manifests/laravel-deployment.yaml"] will be created
+# kubectl_manifest.manifest_file["manifests/laravel-service.yaml"] will be created
+# kubectl_manifest.manifest_file["manifests/mysql-configmap.yaml"] will be created
+# kubectl_manifest.manifest_file["manifests/mysql-service.yaml"] will be created
+# kubectl_manifest.manifest_file["manifests/mysql-statefulset.yaml"] will be created
+Plan: 5 to add, 0 to change, 0 to destroy.
+```
+
 **Step 5:** Apply Terraform Plan
+Sau khi kiểm tra xong Execution Plan và không thấy có gì sai thì các bạn có thể deploy bằng command: `terraform apply`
+
+```
+$ terraform apply
+
+kubectl_manifest.manifest_file["manifests/laravel-deployment.yaml"]: Creating...
+kubectl_manifest.manifest_file["manifests/mysql-service.yaml"]: Creating...
+kubectl_manifest.manifest_file["manifests/mysql-configmap.yaml"]: Creating...
+kubectl_manifest.manifest_file["manifests/mysql-statefulset.yaml"]: Creating...
+kubectl_manifest.manifest_file["manifests/laravel-service.yaml"]: Creating...
+kubectl_manifest.manifest_file["manifests/laravel-service.yaml"]: Creation complete after 1s [id=/api/v1/namespaces/default/services/laravel]
+kubectl_manifest.manifest_file["manifests/mysql-configmap.yaml"]: Creation complete after 1s [id=/api/v1/namespaces/default/configmaps/mysql]
+kubectl_manifest.manifest_file["manifests/mysql-service.yaml"]: Creation complete after 2s [id=/api/v1/namespaces/default/services/mysql]
+kubectl_manifest.manifest_file["manifests/laravel-deployment.yaml"]: Creation complete after 2s [id=/apis/apps/v1/namespaces/default/deployments/laravel-app]
+kubectl_manifest.manifest_file["manifests/mysql-statefulset.yaml"]: Creation complete after 2s [id=/apis/apps/v1/namespaces/default/statefulsets/mysql]
+
+Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+```
 
 ## 3. Kiểm tra
 
