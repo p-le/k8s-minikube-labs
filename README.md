@@ -1,10 +1,6 @@
 <img src="./assets/banner.jpg">
 <h1 align="center">Kubernetes Development Labs & Minikube</h1>
 
----
-
-# Kubernetes Development Labs & Minikube
-
 Đây là các labs mà mình chuẩn bị để giúp các bạn làm quen với **[Kubernetes](https://kubernetes.io/)** trên môi trường Development sử dụng **[Minikube](https://minikube.sigs.k8s.io/docs/)**.
 
 | Labs                                                     | Nội dung                                                                                                                  |
