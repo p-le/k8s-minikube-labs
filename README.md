@@ -26,10 +26,10 @@
 
 Các bạn có thể Fork về và nghiên cứu. Nhớ ủng hộ mình :star: nha :smile:
 
-| Labs                                                     | Nội dung                                                                                                                                                          |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Getting Started](docs/getting_started.md)**           | Setup cơ bản **[Minikube](https://minikube.sigs.k8s.io/docs/)** và **[kubectl](https://kubernetes.io/docs/tasks/tools/)**                                         |
-| **[Lab 001](labs/001-laravel-app-minikube)**             | Deploy **[Laravel](https://laravel.com/)** & **[MySQL](https://www.mysql.com/)** vào Minikube Cluster bằng **[kubectl](https://kubernetes.io/docs/tasks/tools/)** |
-| **[Lab 002](labs/002-laravel-app-minikube-helm-chart/)** | Sử dụng **[Helm](https://helm.sh/)** để đóng gói Manifest Files của Application                                                                                   |
-| **[Lab 003](labs/003-laravel-app-minikube-terraform/)**  | Sử dụng **[Terraform](https://www.terraform.io/)** quản lý Kubernetes Resources                                                                                   |
-| **[Lab 004](labs/004-laravel-app-minikube-flux/)**       | WORK IN PROGRESS                                                                                                                                                  |
+| Labs                                                     | Nội dung                                                                                                                                                                                                    |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **[Getting Started](docs/getting_started.md)**           | Setup cơ bản **[Minikube](https://minikube.sigs.k8s.io/docs/)** và **[kubectl](https://kubernetes.io/docs/tasks/tools/)**                                                                                   |
+| **[Lab 001](labs/001-laravel-app-minikube)**             | Deploy **[Laravel](https://laravel.com/)** & **[MySQL](https://www.mysql.com/)** vào **[Minikube](https://minikube.sigs.k8s.io/docs/)** Cluster bằng **[kubectl](https://kubernetes.io/docs/tasks/tools/)** |
+| **[Lab 002](labs/002-laravel-app-minikube-helm-chart/)** | Sử dụng **[Helm](https://helm.sh/)** để đóng gói Manifest Files của Application và deploy vào **[Minikube](https://minikube.sigs.k8s.io/docs/)**                                                            |
+| **[Lab 003](labs/003-laravel-app-minikube-terraform/)**  | Sử dụng **[Terraform](https://www.terraform.io/)** quản lý Kubernetes Resources trong **[Minikube](https://minikube.sigs.k8s.io/docs/)**                                                                    |
+| **[Lab 004](labs/004-minikube-fluxcd/)**                 | Sử dụng **[FluxCD](https://fluxcd.io/docs/get-started/)** với **[Minikube](https://minikube.sigs.k8s.io/docs/)**, Continuous Delivery & GitOps                                                              |
