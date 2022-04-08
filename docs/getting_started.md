@@ -5,23 +5,25 @@
 
 # 1. Chuẩn bị môi trường
 
+Nếu các bạn đã và đang dùng Linux / MacOS thì có thể bỏ qua bước này.
+
 **Note 1**: Nếu đang sử dụng **Windows** thì tốt nhất, các bạn nên provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Sau đó, các bạn setup chức năng **[VS Code Remote Development thông qua SSH](https://code.visualstudio.com/docs/remote/ssh)** để develop trong chính Virtual Machine.
 
 Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
 
 Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
 
-**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)**để cài đặt hệ điều hành Linux bên trong Windows. Sau đó setup **[VS Code Remote Development với WSL](https://code.visualstudio.com/docs/remote/wsl)**
+**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** để cài đặt hệ điều hành Linux bên trong Windows. Sau đó, các bạn cũng có thể xem xét setup **[VS Code Remote Development với WSL](https://code.visualstudio.com/docs/remote/wsl)** nếu cần thiết.
 
 > Các phần sau này, mặc định được thưc thi trên hệ điều hành Linux. Đối với các bạn sử dụng MacOS thì sẽ cần thay đổi một chút.
 
 # 2. Cài đặt [Minikube](https://minikube.sigs.k8s.io/docs/)
 
-Là môi trường Local Kubenetes giúp các bạn nhanh chóng khởi tạo một Kubernetes Cluster để sử dụng với mục đích development, học tập.
+Là công cụ giúp các bạn nhanh chóng khởi tạo một Kubernetes Cluster để sử dụng với mục đích development, học tập.
 
 **[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với hệ điều hành trên môi trường của các bạn.
 
-Nếu các bạn sử dụng hệ điều hành Linux thì có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
+Các bạn có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị hoặc mở Document và copy commands
 
 ```shell
 $ ./tools/install-minikube.sh
@@ -81,12 +83,13 @@ Command trên sẽ tạo một Proxy tới **kubernetes-dashboard** service
 🤔  Verifying proxy health ...
 🎉  Opening http://127.0.0.1:45229/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
 
-
 ```
 
 # 5. Cài đặt [kubectl](https://kubernetes.io/docs/tasks/tools/) và kiểm tra Minikube Cluster
 
-Sử dụng script: **[install-kubectl.sh](../tools/install-kubectl.sh)**
+Công cụ command-line để chạy các commands liên quan tới deploy application, quản cluster resources, xem logs đối với Kubenetes Cluster.
+
+Cài đặt sử dụng script: **[install-kubectl.sh](../tools/install-kubectl.sh)**
 
 ```
 $ ./tools/install-kubectl.sh
@@ -125,4 +128,4 @@ storage-provisioner 1/1 Running 1 (116s ago) 2m35s
 
 ```
 
-Đến đây coi như là các bạn đã hoàn tất setup cơ bản để sử dụng Minikube trên môi trường Development. :tada:
+Đến đây các bạn đã hoàn tất cài đặt **Minikube** và khởi tạo **Minikube Cluster**. :tada:
