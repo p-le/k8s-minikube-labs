@@ -2,15 +2,19 @@
 
 **[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với môi trường của các bạn.
 
-**Note**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Ubuntu VM bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều.
+**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Ubuntu VM bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Sau đó setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** thông qua SSH để develop trong Virtual Machine tạo bằng Vagrant.
 
-Tham khảo: **[Vagrantfile](tools/Vagrantfile)** mà mình đã chuẩn bị
+Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
+
+Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
 
 Nếu các bạn sử dụng Linux có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
 
 ```shell
 $ ./tools/install-minikube.sh
 ```
+
+**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** trên hệ điều hành Windows để cài đặt hệ điều hành Linux.
 
 # 2. Khởi tạo Minikube Cluster
 
