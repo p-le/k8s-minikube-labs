@@ -1,8 +1,8 @@
 # 1. Cài đặt [Minikube](https://minikube.sigs.k8s.io/docs/)
 
-**[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với môi trường của các bạn.
+**[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với hệ điều hành trên môi trường của các bạn.
 
-Nếu các bạn sử dụng Linux có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
+Nếu các bạn sử dụng hệ điều hành Linux thì có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
 
 ```shell
 $ ./tools/install-minikube.sh
@@ -14,7 +14,7 @@ $ ./tools/install-minikube.sh
 
 Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
 
-**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** trên hệ điều hành Windows để cài đặt hệ điều hành Linux.
+**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** trên hệ điều hành Windows để cài đặt hệ điều hành Linux. Sau đó setup **[VS Code Remote Development với WSL](https://code.visualstudio.com/docs/remote/wsl)**
 
 # 2. Khởi tạo Minikube Cluster
 
