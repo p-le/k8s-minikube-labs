@@ -1,4 +1,23 @@
-# 1. Cài đặt [Minikube](https://minikube.sigs.k8s.io/docs/)
+# Pre-requirements
+
+- Cài đặt **[Visual Studio Code](https://code.visualstudio.com/)**
+- Máy không quá yếu (> 8GB Ram)
+
+# 1. Chuẩn bị môi trường
+
+**Note 1**: Nếu đang sử dụng **Windows** thì tốt nhất, các bạn nên provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Sau đó, các bạn setup chức năng **[VS Code Remote Development thông qua SSH](https://code.visualstudio.com/docs/remote/ssh)** để develop trong chính Virtual Machine.
+
+Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
+
+Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
+
+**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)**để cài đặt hệ điều hành Linux bên trong Windows. Sau đó setup **[VS Code Remote Development với WSL](https://code.visualstudio.com/docs/remote/wsl)**
+
+> Các phần sau này, mặc định được thưc thi trên hệ điều hành Linux. Đối với các bạn sử dụng MacOS thì sẽ cần thay đổi một chút.
+
+# 2. Cài đặt [Minikube](https://minikube.sigs.k8s.io/docs/)
+
+Là môi trường Local Kubenetes giúp các bạn nhanh chóng khởi tạo một Kubernetes Cluster để sử dụng với mục đích development, học tập.
 
 **[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với hệ điều hành trên môi trường của các bạn.
 
@@ -8,15 +27,7 @@ Nếu các bạn sử dụng hệ điều hành Linux thì có thể chạy scri
 $ ./tools/install-minikube.sh
 ```
 
-**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Mình thì sử dụng Visual Studio Code nên mình sẽ setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** để develop trong chính Virtual Machine.
-
-Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
-
-Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
-
-**Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** trên hệ điều hành Windows để cài đặt hệ điều hành Linux. Sau đó setup **[VS Code Remote Development với WSL](https://code.visualstudio.com/docs/remote/wsl)**
-
-# 2. Khởi tạo Minikube Cluster
+# 3. Khởi tạo Minikube Cluster
 
 **[Môi trường chạy Minikube](https://minikube.sigs.k8s.io/docs/start/#what-youll-need)** cần phải có ít nhất.
 
@@ -51,7 +62,7 @@ Output minh họa:
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
-# 3. Truy cập thử Dashboard của Minikube
+# 4. Truy cập thử Dashboard của Minikube
 
 Sử dụng command sau để lấy URL tới Dashboard.
 
@@ -73,7 +84,7 @@ Command trên sẽ tạo một Proxy tới **kubernetes-dashboard** service
 
 ```
 
-# 4. Cài đặt [kubectl](https://kubernetes.io/docs/tasks/tools/) và kiểm tra Minikube Cluster
+# 5. Cài đặt [kubectl](https://kubernetes.io/docs/tasks/tools/) và kiểm tra Minikube Cluster
 
 Sử dụng script: **[install-kubectl.sh](../tools/install-kubectl.sh)**
 
