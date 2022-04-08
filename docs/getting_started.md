@@ -4,7 +4,7 @@
 
 Nếu các bạn đang sử dụng Linux hoặc MacOS thì có thể cài đặt luôn.
 
-**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Sau đó setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** thông qua SSH để develop trong Virtual Machine tạo bằng Vagrant.
+**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Mình thì sử dụng Visual Studio Code nên mình sẽ setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** để develop trong Virtual Machine mà các bạn đã tạo.
 
 Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
 
