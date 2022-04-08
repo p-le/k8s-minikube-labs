@@ -2,19 +2,17 @@
 
 **[Lựa chọn Binary](https://minikube.sigs.k8s.io/docs/start/)** phù hợp với môi trường của các bạn.
 
-Nếu các bạn đang sử dụng Linux hoặc MacOS thì có thể cài đặt luôn.
-
-**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Mình thì sử dụng Visual Studio Code nên mình sẽ setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** để develop trong Virtual Machine mà các bạn đã tạo.
-
-Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
-
-Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
-
 Nếu các bạn sử dụng Linux có thể chạy script **[install-minikube.sh](../tools/install-minikube.sh)** mình đã chuẩn bị.
 
 ```shell
 $ ./tools/install-minikube.sh
 ```
+
+**Note 1**: Nếu đang sử dụng **Windows** thì các bạn có thể xem xét provision một Virtual Machine chạy hệ điều hành Linux bằng **[Vagrant](https://www.vagrantup.com)** & **[VirtualBox](https://www.virtualbox.org)**. Mình thì sử dụng Visual Studio Code nên mình sẽ setup **[VS Code Remote Development](https://code.visualstudio.com/docs/remote/ssh)** để develop trong chính Virtual Machine.
+
+Đây là cách mình hiện tại sử dụng. Bởi vì develop trên môi trường Linux sẽ thuận tiện hơn rất nhiều. Mặc định thì mình sử dụng Linux Distribution là Ubuntu.
+
+Tham khảo: **[Vagrantfile](../tools/Vagrantfile)** mà mình đã chuẩn bị
 
 **Note 2:** Các bạn cũng có thể **[sử dụng WSL](https://docs.microsoft.com/en-us/windows/wsl/install)** trên hệ điều hành Windows để cài đặt hệ điều hành Linux.
 
